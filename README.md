@@ -1,78 +1,6 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-# Programming Vets Office 
-
-<!-- [A quick 1-2 sentences talking about the topics and material covered in this assignment] -->
-
-## Overview
-
-<!-- [A high-level summary of what students will be working on in this assignment] -->
-In this Project, we take a look at pointers, classes (Has-A relationship) and operator overloading
-<!-- Some details on naming conventions. Some are essential for the Autograder to properly function. -->
-<div
-    style="background-color: #FFFBEB; border-left: 6px solid #F97316; color: #813F0B; padding: 10px; border-radius: 5px;">
-    <i class="fa-solid fa-triangle-exclamation" style="margin-right: 10px;"></i>
-    <b style="display: inline; margin-bottom: 8px; font-size: 16px;">Naming Conventions:</b>
-    <p><ul>
-<li>While implementation details are still up to you, make sure you use the coding style discussed in class regarding functions, name, classes, and indentations unless a specific name is given to you throughout this assignment.</li>
-<li>If a specific name for something like a <code>variable</code>, <code>class</code>, or <code>function</code> is given to you, you <em>MUST</em> use it exactly or the autograder won&#39;t be able to find it and the tests will fail.<ul>
-<li>This applies to function prototypes/signatures/definitions as well. The <code>inputs</code> and <code>outputs</code> of the functions you implement must also match the ones specified.</li>
-<li>Points will <em><em>not</em></em> be given for tests that fail due to incorrect naming or signature mismatch.</li>
-</ul>
-</li>
-<li>Variables should be localized with the correct scope, datatype (based on the data needed to be stored), and their names must be pneumonic. I.e., avoid variables like a, b, i, j, k, x, y, z, etc. </li>
-<li>Coding style will be reviewed and your assessment grade may be impacted due to that as described in our syllabus.</li>
-<li>Remember that homework must be completed <strong>individually</strong> without help (human or AI).</li>
-</ul></p>
-</div>
-
-<br>
-
-<!-- Restrictions on what libraries are/aren't allowed to be used -->
-<div
-    style="background-color: #FEF2F2; border-left: 6px solid #EF4444; color: #991B1B; padding: 16px; border-radius: 5px;">
-    <i class="fa-solid fa-fire-flame-curved" style="margin-right: 10px;"></i>
-    <b style="display: inline; margin-bottom: 8px; font-size: 16px;">Restrictions:</b>
-    <p><ul>
-<li>Only the libraries discussed in class can be used in homework:<ul>
-<li><code>iostream</code></li>
-<li><code>string</code></li>
-<li><code>cmath</code></li>
-<li><code>random</code></li>
-<li><code>ctime</code></li>
-<li><code>array</code></li>
-<li><code>vector</code></li>
-<li><code>cstddef</code></li>
-<li><code>iomanip</code></li>
-<li><code>exception</code></li>
-<li><code>cstdlib</code></li>
-<li><code>algorithm</code> (only for transform function)</li>
-</ul>
-</li>
-<li>The <code>using namespace</code> statement such as <code>using namespace std;</code> is <strong>not allowed</strong> in this homework. The <code>using</code> keyword is otherwise allowed, e.g., <code>using std::cout;</code></li>
-</ul></p>
-</div>
-
-## Tasks & TODOs
-
-<!-- Note (Blue) -->
-<div
-    style="background-color: #E5F6FF; border-left: 6px solid #2CA5E0; color: #091E42; padding: 16px; border-radius: 5px; font-family: Arial, sans-serif; font-size: 14px;">
-    <i class="fa-solid fa-circle-info"></i>
-    <b style="display: inline; margin-bottom: 8px; font-size: 16px;">Note:</b>
-    <p>There are no TODO comments for this assignment as you are creating your own files. You can use the TODOs from prior PAs as a rough guide to the pieces you need. You should also refer to your class notes and textbook for guidance as necessary.</p>
-</div>
-
-<br>
-
-<!-- Warning (Red) -->
-<div
-    style="background-color: #FEF2F2; border-left: 6px solid #EF4444; color: #991B1B; padding: 16px; border-radius: 5px;">
-    <i class="fa-solid fa-fire-flame-curved" style="margin-right: 10px;"></i>
-    <b style="display: inline; margin-bottom: 8px; font-size: 16px;">Warning:</b>
-    <p>You <strong>must not</strong> implement any inline functions in the header files for this assignment. The autograder is configured to look for all function implementations in the <code>.cpp</code> files. It will not be able to find them if they are in the <code>.h</code> files.</p>
-</div>
 
 
 ## Vet's Office
@@ -234,13 +162,7 @@ TYPE         :               <Type>
 BREED        :              <breed>
 ```
 
-<!-- Important (Yellow) -->
-<div
-    style="background-color: #FEF9C3; border-left: 6px solid #F59E0B; color: #854D0E; padding: 16px;  border-radius: 5px;">
-    <i class="fa-solid fa-exclamation" style="margin-right: 10px;"></i>
-    <b style="display: inline; margin-bottom: 8px; font-size: 16px;">Important!</b>
-    <p>Friend functions must appear above functions that use them in the files where they are implemented. This means that the +/- operators must be overloaded before addPet and deletePet. You will get undefined reference errors if they aren't implemented in the right order since friend functions aren't true member functions in this instance.</p>
-</div>
+
 
 ### Below is the **UML** representation of the class `Date`.
 
@@ -370,24 +292,6 @@ classDiagram
         + deletePet() void
     }
 ```
-<!-- Note (Blue) -->
-<div
-    style="background-color: #E5F6FF; border-left: 6px solid #2CA5E0; color: #091E42; padding: 16px; border-radius: 5px; font-family: Arial, sans-serif; font-size: 14px;">
-    <i class="fa-solid fa-circle-info"></i>
-    <b style="display: inline; margin-bottom: 8px; font-size: 16px;">Note:</b>
-    <p>Make sure you put the declarations in the header file and the implementations in the .cpp file!</p>
-</div>
-<br>
-
-6. Create a `main.cpp` file with an `int main()` and use it to test your code.
-
-<!-- Important (Yellow) -->
-<div
-    style="background-color: #FEF9C3; border-left: 6px solid #F59E0B; color: #854D0E; padding: 16px;  border-radius: 5px;">
-    <i class="fa-solid fa-exclamation" style="margin-right: 10px;"></i>
-    <b style="display: inline; margin-bottom: 8px; font-size: 16px;">Important!</b>
-    <p>Failure to complete this step may result in a loss of points!</p>
-</div>
 
 ### Specifications
 
@@ -395,24 +299,6 @@ classDiagram
 - To make life easier for your client all letters will be stored in uppercase regardless of how they are entered.
 - It is strongly recommended that you make your classes friends.
 - <strong> Extra Credit: (10pts) </strong> Add the ability to modify a pet or address. This must be a function outside the classes. It can be a friend function.
-
-
-### Hint: Converting a string to upper-case
-
-The function `transform` allows for coverting a string to upper-case. You need to include `<algorithm>` library to use `transform`.
-
-For example,
-
-```cpp
-string name = "John Doe";
-transform(name.begin(), name.end(), name.begin(), toupper);
-```
-
-will update `name` as 
-
-```cpp
-JOHN DOE
-```
 
 
 
