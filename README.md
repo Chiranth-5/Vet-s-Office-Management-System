@@ -1,15 +1,14 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/numwWXBG)
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=16536035)
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-# Programming Assignment #6 (PA6)
+# Programming Vets Office 
 
 <!-- [A quick 1-2 sentences talking about the topics and material covered in this assignment] -->
 
 ## Overview
 
 <!-- [A high-level summary of what students will be working on in this assignment] -->
-In this assignment, we take a look at pointers, classes (Has-A relationship) and operator overloading
+In this Project, we take a look at pointers, classes (Has-A relationship) and operator overloading
 <!-- Some details on naming conventions. Some are essential for the Autograder to properly function. -->
 <div
     style="background-color: #FFFBEB; border-left: 6px solid #F97316; color: #813F0B; padding: 10px; border-radius: 5px;">
@@ -416,85 +415,5 @@ JOHN DOE
 ```
 
 
-## Testing 
-
-Your code will run against unit tests on an Autograder. The Autograder runs on Ubuntu Linux so the unit tests are configured for that OS only. You can run the tests in a Codespace (which uses Ubuntu as well) or on your own Ubuntu environment (if you have one) using the provided `g++` instructions. Remember tests must pass on the Autograder to receive points.
-
-### Compiling
-
-It is expected that you are able to compile and run your own code without relying solely on other tools. This includes the VS Code Debugger's "Play/Run" Button. You should not be using that at all for this assignment. Here is the general format for g++ (you leave out the `[]` characters when actually writing the commands ):
-
-```bash
-g++ [relevant setting and flags. These usually start with a '-'] [list of files to link together separated by a space : .cpp, .o, .a etc] -lpthread -o [name of the output file you wish to use]
-```
-
-The `g++` build command does use a couple extra settings when compiling with the unit tests. The additional options and what they signify are explained here:
 
 
-- `[.cpp files, .o files, and .a files]` : Now, list off any .cpp source files, .o object files, and .a static library files that need to be included in the build. For all of these, you must include the relative file path for any files that aren't in your current working directory.
-    - You will first list off any `.cpp` files needed by your program to run. In general, if your code uses an `#include "*.h"` statement, you will put the corresponding `.cpp` file here.
-    - Then, add the object file for the test(s) you wish to run. Remember you must also include the relative file path if you are in a different working directory from the .o file (for example, `../tests/` if you are in the `src` folder or just `tests/` if you at the root of the repo).
-    - Lastly, include the file `gtest_main.a`. This file contains the `main` program needed to launch the unit tests against your code.
-        - Remember: A build must include **_exactly one (1)_** main function so you can't include your own main when running the unit tests.
-
-- `-lpthread`: Links the pthread library to the resulting executable. In essence, it ensures that threading functions are available in the resulting binary. The unit tests use multithreading which is why we are including it.
-
-- `-o` : This option lets you specify the name of the file you want `g++` to output the executable code. If a file with that name already exists, *it will be overwritten*. The default output file is `a.out` if you don't include this option.
-
-Here is an example of a build command that could be used for this assignment. In this example, the working directory is `repository root` or top level of the repository:
-
-```bash
-g++ src/Address.cpp tests/gtest_main.a tests/addressGetters_test.o -lpthread -o addressGetters_test.exe
-```
-
-Modify it as needed to run the tests as you wish. The autograder will also still run on each push to your repo if you prefer to test that way. 
-
-<div
-    style="background-color: #FFFBEB; border-left: 6px solid #F97316; color: #813F0B; padding: 16px; border-radius: 5px;">
-    <i class="fa-solid fa-triangle-exclamation" style="margin-right: 10px;"></i>
-    <b style="display: inline; margin-bottom: 8px; font-size: 16px;">Caution</b>
-    <p>Do <b>not</b> attempt to force the unit tests to pass by hardcoding in responses to expected values. Attempts to bypass or "trick" the Autograder are considered academic misconduct and may result in a 0 for the whole assignment.</p>
-</div>
-
-## Rubric & Grading
-
-Here is the breakdown of the tests, what they test, and how many marks they are worth.
-
-| Test Name        | Description                                           | Marks |
-|------------------|-------------------------------------------------------|------:|
-| addressGetters_test      | Uses constructors and checks Address's getters                              |    4 |
-| addressSetters_test      | Uses constructors and checks Address's setters                              |    6 |
-| addressIstream_test      | Checks if >> is overloaded correctly for Address                             |    6 |
-| addressOstream_test      | checks if << is overloaded correctly for Address                              |    4 |
-| petGetters_test      | Uses constructors and checks Pets's getters                              |    4 |
-| petSetters_test      | Uses constructors and checks Pets's setters                              |    6 |
-| petIstream_test | Checks if >> is overloaded correctly for Pet | 6 |
-| petOstream_test | Checks if << is overloaded correctly for Pet | 4 |
-| personGetters_test | Uses constructors and checks Person's getters | 4 |
-| personSetters_test | Uses constructors and checks Person's setters | 6 |
-| personIstream_test | Checks if >> is overloaded correctly for Person | 6 |
-| personPetSearch_test | Checks if search for Pet in pets works correctly | 4 |
-| personPetAdd_test | Checks that Pet is added to pets vector correctly | 6 |
-| personPetDelete_test | Checks that Pet is deleted from pets vector correctly | 10 |
-| personOstream_test | Checks if << is overloaded correctly for Person | 4 |
-
-<div
-    style="background-color: #E5F6FF; border-left: 6px solid #2CA5E0; color: #091E42; padding: 10px; border-radius: 5px;">
-    <i class="fa-solid fa-circle-info"></i>
-    <b style="display: inline; margin-bottom: 8px; font-size: 16px;">Grading Breakdown & Style Points</b>
-    <p>Assignments on Canvas will be recorded out of 100 marks.</p>
-    <p>The grading of homework is a combination of completeness and correctness of the outputs and programming style. 
-Completeness and correctness (80 marks) will be assessed automatically through testing on GitHub Classroom, 
-while instructors and TAs will assess the programming style after the deadline (20 marks).</p>
-    <p>Code style will be evaluated using the guidelines shown in the Modules on Canvas.</p>
-    <p>This grading will be done manually by the TAs after the deadline.</p>
-</div>
-<br>
-<!-- Important (Yellow) -->
-<div
-    style="background-color: #FEF9C3; border-left: 6px solid #F59E0B; color: #854D0E; padding: 16px;  border-radius: 5px;">
-    <i class="fa-solid fa-exclamation" style="margin-right: 10px;"></i>
-    <b style="display: inline; margin-bottom: 8px; font-size: 16px;">Important Note Regarding the Rubric</b>
-    <p>This Rubric is a breakdown of the test cases and their points only!</p>
-    <p>You must also review the Rubric on the Canvas Assignment for the rest of the grading criteria.</p>
-</div>
